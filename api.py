@@ -49,8 +49,8 @@ def get_one_todo(todo_id):
     """
     Recupere un todo
 
-    Avec la methode GET, recupere un todo a l'aide de son id
-    Et ce todo, on indique id, text et s'il est complété
+    type argument : integer
+    Pour le todo, on indique id, text et s'il est complété
     Retourne ce todo dans du JSON
     """
     todo = Todo.query.filter_by(id=todo_id).first()
@@ -88,9 +88,8 @@ def update_todo(todo_id):
     """
     Update un todo
 
-    Avec la methode PUT, update un todo a l'aide de son id
+    type argument : integer
     si le todo n'existe pas, retourne un message JSON
-    Meta jour la base de donnee
     Retourne un message de confirmation JSON
     """
     todo = Todo.query.filter_by(id=todo_id).first()
@@ -109,9 +108,8 @@ def delete_todo(todo_id):
     """
     Supprime un todo
 
-    Avec la methode DELETE, supprime un todo a l'aide de son id
+    type argument : integer
     si le todo n'existe pas, retourne un message JSON
-    Met a jour la base de donnee
     Retourne un message de confirmation JSON
     """
     todo = Todo.query.filter_by(id=todo_id).first()
